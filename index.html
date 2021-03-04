@@ -20,15 +20,15 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="inputDiscordAccount">1. Fill in your username and tag.</label>
-                                        <input type="text" class="form-control" id="inputDiscordAccount" aria-describedby="emailHelp" placeholder="Username#0000">
+                                        <input required type="text" class="form-control" id="inputDiscordAccount" aria-describedby="emailHelp" placeholder="Username#0000">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputDiscordAge">2. How old is your Discord account? </label>
-                                        <input type="text" class="form-control" id="inputDiscordAge" placeholder="1 Year">
+                                        <input required type="text" class="form-control" id="inputDiscordAge" placeholder="1 Year">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputLanguages">Confirm Password:</label>
-                                        <input type="text" class="form-control" id="inputLanguages" placeholder="English, Dutch, German">
+                                        <input required type="text" class="form-control" id="inputLanguages" placeholder="English, Dutch, German">
                                     </div>
 <!--                                
                                     <div class="form-group form-check">
@@ -36,35 +36,43 @@
                                         <label class="form-check-label" for="botCheck">I'm not a bot!</label>
                                     </div>
 -->
-                                </form>
-                                <button class="btn btn-primary" onclick="sendForm()">Submit</button>
-                                <script>
-                                    function sendForm() {
-                                        var request = new XMLHttpRequest();
-                                        request.open("POST", "https://discord.com/api/webhooks/817042216526020618/BWirVhXGXA0ktmtCq0ArnlNyG4HNxK8NGXLMPoLGpRlZdDmhuvYpG_ovof7ntZ0LetC1");
-                                        request.setRequestHeader('Content-type', 'application/json');
+                                    <button class="btn btn-primary" onclick="sendForm()">Submit</button>
+                                    <script>
+                                        function sendForm() {
+                                            var request = new XMLHttpRequest();
+                                            request.open("POST", "https://discord.com/api/webhooks/817042216526020618/BWirVhXGXA0ktmtCq0ArnlNyG4HNxK8NGXLMPoLGpRlZdDmhuvYpG_ovof7ntZ0LetC1");
+                                            request.setRequestHeader('Content-type', 'application/json');
 
-                                        var applicationEmbed = {
-                                            author: {
-                                                name: "Captain Hook"
-                                            },
-                                            title: "My new embed",
-                                            description: document.getElementById("inputDiscordAccount").value,
-                                            color: hexToDecimal("#ff0000")
-                                        }
-
-                                        var params = {
-                                            username: "My Webhook Name",
-                                            embeds: [ applicationEmbed]
+                                            var applicationEmbed = {
+                                                author: {
+                                                    name: "Captain Hook"
+                                                },
+                                                title: "My new embed",
+                                                description: isNotNull(document.getElementById("inputDiscordAccount").value),
+                                                color: hexToDecimal("#ff0000")
                                             }
 
-                                        request.send(JSON.stringify(params));
+                                            var params = {
+                                                username: "My Webhook Name",
+                                                embeds: [ applicationEmbed]
+                                                }
 
-                                        function hexToDecimal(hex) {
-                                        return parseInt(hex.replace("#",""), 16)
+                                            request.send(JSON.stringify(params));
+
+                                            function hexToDecimal(hex) {
+                                            return parseInt(hex.replace("#",""), 16)
+                                            }
+
+                                            function isNotNull(string) {
+                                                if(string) {
+                                                    return string
+                                                } else {
+                                                    return "No data given."
+                                                }
+                                            }
                                         }
-                                    }
-                                </script>
+                                    </script>
+                                </form>
                             </div>
                         </div>
                     </div>

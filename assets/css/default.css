@@ -3,9 +3,9 @@
   outline-width: 0;
   font-family: "Montserrat" !important;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #container {
@@ -124,7 +124,7 @@ form .serverInfo p .name {
 .acceptBtn {
   width: 100%;
   box-sizing: border-box;
-  background: #7289DA;
+  background: #7289da;
   border: none;
   color: #fff;
   padding: 15px 0;
@@ -137,5 +137,5 @@ form .serverInfo p .name {
   text-decoration: none;
 }
 .acceptBtn:hover {
-  background: #6B7FC5;
+  background: #6b7fc5;
 }

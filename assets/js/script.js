@@ -1,9 +1,9 @@
 var images = [
-  "../images/background1.png",
-  "../images/background2.gif",
-  "../images/background3.gif",
-  "../images/background4.gif",
-  "../images/background5.png",
+  "./assets/images/background1.png",
+  "./assets/images/background2.gif",
+  "./assets/images/background3.gif",
+  "./assets/images/background4.gif",
+  "./assets/images/background5.png",
 ];
 
 $("#container").append(

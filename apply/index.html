@@ -5,15 +5,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/main.css"></link>
+    <link rel="stylesheet" href="../assets/css/apply.css"></link>
     <script type="module" src="./assets/js/webhook.js"></script>
-    <!--
     <script async src="https://arc.io/widget.min.js#u6Rgurdy"></script>
-    -->
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
+      <form action="/" autocomplete="off">
         <div class="banner">
           <h1>Staff Application - DiscordHub</h1>
         </div>
@@ -36,97 +34,96 @@
         Owners Discord name and tag: <strong>LoraIsa#6666</strong>
         </p>
         <div class="item">
-          <p>Name</p>
+          <p>Username and tag<span class="required">*</span></p>
           <div class="name-item">
-            <input type="text" name="userName" placeholder="Username" required/>
-            <input type="text" name="userTag" placeholder="#0000" required/>
+            <input required type="text" name="userName" placeholder="Username"/>
+            <input required type="text" name="userTag" placeholder="#0000"/>
           </div>
         </div>
         <div class="item">
-          <p>Phone</p>
+          <p>Phone number</p>
           <input type="text" name="phone"/>
         </div>
         <div class="item">
-          <p>Email</p>
-          <input type="text" name="email"/>
+          <p>How old is your Discord account?<span class="required">*</span></p>
+          <input required type="text" name="accountAge"/>
         </div>
         <div class="item">
-          <p>How old is your Discord account?</p>
-          <input type="text" name="accountAge" required/>
-        </div>
-        <div class="item">
-          <p>What languages do u speak?</p>
-          <input type="text" name="languages" required/>
+          <p>What languages do u speak?<span class="required">*</span></p>
+          <input required type="text" name="languages"/>
         </div>
         <h2>Course Details</h2>
         <div class="item">
-          <p>What position did you had in mind?</p>
-          <input type="text" name="position"/>
+          <p>What position did you had in mind?<span class="required">*</span></p>
+          <input required type="text" name="position"/>
         </div>
         <div class="item">
-          <p>Why do you think you would be fit for this position?</p>
-          <input type="text" name="positionReason"/>
+          <p>Why do you think you would be fit for this position?<span class="required">*</span></p>
+          <input required type="text" name="positionReason"/>
         </div>
         <div class="item">
-          <p>What is your experience with moderation?</p>
-          <input type="text" name="experience"/>
+          <p>What is your experience with moderation?<span class="required">*</span></p>
+          <input required type="text" name="experience"/>
         </div>
         <div class="item">
-            <p>Why would you like to be a staff member on DiscordHub?</p>
-            <input type="text" name="whyStaff"/>
+            <p>Why would you like to be a staff member on DiscordHub?<span class="required">*</span></p>
+            <input required type="text" name="whyStaff"/>
         </div>
         <div class="item">
-          <p>How can you help improving the server?</p>
-          <input type="text" name="improving"/>
+          <p>How can you help improving the server?<span class="required">*</span></p>
+          <input required type="text" name="improving"/>
         </div>
         <h2>Staff Actions</h2>
         <div class="item">
-          <p>A staff member is abusing their privileges what will u do? </p>
+          <p>A staff member is abusing their privileges what will u do?<span class="required">*</span></p>
           <select name="staffAbuse">
-            <option value="">Select an option</option>
+            <option value="">Select an option.</option>
             <option value="1">Tell the owner, or someone that has a higher position than me.</option>
-            <option value="2">Delete all the messages and tell him/ her to stop.</option>
-            <option value="3">Ask the person politely to stop, if not mute him/ her.</option>
-            <option value="4">Ban him/ her. And tell the owner what happened.</option>
+            <option value="2">Delete all the messages and tell him/her to stop.</option>
+            <option value="3">Ask the person politely to stop, if not mute him/her.</option>
+            <option value="4">Ban him/her. And tell the owner what happened.</option>
           </select>
         </div>
         <div class="item">
-          <p>Distributor Address</p>
-          <input type="text" name="name" placeholder="Street address" />
-          <input type="text" name="name" placeholder="Street address line 2" />
-          <div class="city-item">
-            <input type="text" name="name" placeholder="City" />
-            <input type="text" name="name" placeholder="Region" />
-            <input type="text" name="name" placeholder="Postal / Zip code" />
-            <select>
-              <option value="">Country</option>
-              <option value="1">Russia</option>
-              <option value="2">Germany</option>
-              <option value="3">France</option>
-              <option value="4">Armenia</option>
-              <option value="5">USA</option>
+          <p>A member swears to much, you politely ask him/her to stop. The member doesn't listen and starts calling you names, what do you do?<span class="required">*</span></p>
+            <select name="memberSwearing">
+              <option value="">Select an option.</option>
+              <option value="1">Ask him/her again politely, if the member doesn't stop kick him/her.</option>
+              <option value="2">Mute the member because we don't accept such behavior.</option>
+              <option value="3">You warn him/her one more time, if the member doesn't stop you mute him/her.</option>
             </select>
           </div>
+        <div class="item">
+          <p>A member all the sudden starts talking in another language, what do you do?<span class="required">*</span></p>
+          <select name="memberLanguage">
+            <option value="">Select an option.</option>
+            <option value="1">Find out what language the member is speaking, than tell him to stop in that language.</option>
+            <option value="2">Tell him/her in English that he needs to use the right channel, if the member doesn't listen or doesn't understand try to google translate it to him. If he still doesn't understand mute the member.</option>
+            <option value="3">Tell him/her in English that he/she needs to stop, because the server is clearly only for people that speak English. If the member won't stop mute him/her.</option>
+          </select>
         </div>
         <div class="item">
-          <p>Phone</p>
-          <input type="text" name="name"/>
-        </div>
-        <div class="item">
-          <p>Fax</p>
-          <input type="text" name="name"/>
+          <p>If staff post a picture in a non-picture channel, what will you do?<span class="required">*</span></p>
+          <select name="staffPicture">
+            <option value="">Select an option.</option>
+            <option value="1">Just let it happen, if it happens to much delete them and warn.</option>
+            <option value="2">Don't do anything about it because it's staff. Staff are allowed to send pictures.</option>
+            <option value="3">If the picture is important don't delete it. If it's not important delete it and warn.</option>
+            <option value="4">If the chat isn't active; don't delete the picture. If the chat is active; delete the picture.</option>
+          </select>
         </div>
         <div class="question">
           <p>Server Rules<span class="required">*</span></p>
           <div class="question-answer checkbox-item">
             <div>
-              <input type="checkbox" value="none" id="check_1" name="check" required/>
-              <label for="check_1" class="check"><span>I agree to the <a href="https://discordhub.tk">DiscordHub</a> rules.</span></label>
+              <input required type="checkbox" value="true" id="check_1" name="agreeRules" required/>
+              <label for="check_1" class="check"><span>I agree to the <a href="https://discordhub.tk/">DiscordHub</a> rules.</span></label>
             </div>
           </div>
         </div>
         <div class="btn-block">
-          <button type="submit" href="https://discordhub.tk/">Send</button>
+          <button type="submit" formaction="confirm.html">Send</button>
+          <a href="https://discordhub.tk/" class=".button">Send</a>
         </div>
       </form>
     </div>

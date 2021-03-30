@@ -4,9 +4,9 @@ const hexToDecimal = function (string) {
 
 const isNotNull = function (string) {
     if (string) {
-        return string
+        return  '\n\u200B' + string + '\n\u200B'
     } else {
-        return 'No data has been given.'
+        return '\n\u200B' + 'No data has been given.' + '\n\u200B'
     }
 }
 
@@ -40,10 +40,14 @@ const urlParams = function (question, param) {
             }
         }
         case 'null': {
-            return 'null'
+            return 'Please use the following syntax: urlParams(method, parameter)'
+             + '\n'
+             + 'Available methods: contains, get'
         }
         default: {
-            return 'Please use one of the following query parameters: ' + '\ncontains' + '\nget'
+            return 'Please use the following syntax: urlParams(method, parameter)'
+             + '\n'
+             + 'Available methods: contains, get'
         }
     }
 }
